@@ -6,8 +6,6 @@
 
 Make the following changes to `package.json`:
 
-**package.json**
-
 ```json
 {
   "dependencies": {
