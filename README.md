@@ -1,37 +1,32 @@
 # 6to5-jest
 
+[6to5](https://github.com/6to5/6to5) [jest](https://github.com/facebook/jest) plugin
+
+## Usage
+
+Make the following changes to `package.json`:
+
 **package.json**
 
 ```json
 {
   "dependencies": {
-    "6to5": "*",
+    "6to5-jest": "*",
     "jest": "*"
   },
   "scripts": {
     "test": "jest"
   },
   "jest": {
-    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "scriptPreprocessor": "6to5-jest",
     "testFileExtensions": ["es6", "js"],
     "moduleFileExtensions": ["js", "json", "es6"]
   }
 }
 ```
 
-**preprocessor.js**
+And run:
 
-```javascript
-var to5 = require("6to5");
+    $ npm install
 
-module.exports = {
-  process: function (src, filename) {
-    // Ignore all files within node_modules
-    // 6to5 files can be .js and .es6
-    if (filename.indexOf("node_modules") === -1 && to5.canCompile(filename)) {
-      return to5.transform(src, { filename: filename }).code;
-    }
-    return src;
-  }
-};
-```
+**And you're good to go!**
