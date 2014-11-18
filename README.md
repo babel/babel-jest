@@ -16,7 +16,7 @@ Make the following changes to `package.json`:
     "test": "jest"
   },
   "jest": {
-    "scriptPreprocessor": "6to5-jest",
+    "scriptPreprocessor": "<rootDir>/node_modules/6to5-jest",
     "testFileExtensions": ["es6", "js"],
     "moduleFileExtensions": ["js", "json", "es6"]
   }
