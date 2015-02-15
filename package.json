@@ -1,8 +1,8 @@
 {
-  "name": "bable-jest",
+  "name": "babel-jest",
   "version": "4.0.0",
   "repository": "6to5/6to5-jest",
   "dependencies": {
-    "bable-core": "^4.0.0"
+    "babel-core": "^4.0.0"
   }
 }

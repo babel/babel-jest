@@ -1,6 +1,6 @@
-# bable-jest
+# babel-jest
 
-[Bable](https://github.com/bable/bable) [jest](https://github.com/facebook/jest) plugin
+[Babel](https://github.com/babel/babel) [jest](https://github.com/facebook/jest) plugin
 
 ## Usage
 
@@ -9,14 +9,14 @@ Make the following changes to `package.json`:
 ```json
 {
   "dependencies": {
-    "bable-jest": "*",
+    "babel-jest": "*",
     "jest": "*"
   },
   "scripts": {
     "test": "jest"
   },
   "jest": {
-    "scriptPreprocessor": "<rootDir>/node_modules/bable-jest",
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
     "testFileExtensions": ["es6", "js"],
     "moduleFileExtensions": ["js", "json", "es6"]
   }

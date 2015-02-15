@@ -1,11 +1,11 @@
-var bable = require("bable-core");
+var babel = require("babel-core");
 
 module.exports = {
   process: function (src, filename) {
     // Ignore all files within node_modules
-    // bable files can be .js, .es, .jsx or .es6
-    if (filename.indexOf("node_modules") === -1 && bable.canCompile(filename)) {
-      return bable.transform(src, { filename: filename }).code;
+    // babel files can be .js, .es, .jsx or .es6
+    if (filename.indexOf("node_modules") === -1 && babel.canCompile(filename)) {
+      return babel.transform(src, { filename: filename }).code;
     }
     return src;
   }
