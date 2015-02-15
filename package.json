@@ -1,6 +1,7 @@
 {
   "name": "bable-jest",
   "version": "3.0.0",
+  "repository": "6to5/6to5-jest",
   "dependencies": {
     "bable-core": "^4.0.0"
   }
