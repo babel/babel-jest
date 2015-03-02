@@ -10,7 +10,7 @@ Make the following changes to `package.json`:
 {
   "dependencies": {
     "babel-jest": "*",
-    "jest": "*"
+    "jest-cli": "*"
   },
   "scripts": {
     "test": "jest"
