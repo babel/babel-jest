@@ -8,7 +8,7 @@ Make the following changes to `package.json`:
 
 ```json
 {
-  "dependencies": {
+  "devDependencies": {
     "babel-jest": "*",
     "jest-cli": "*"
   },
