@@ -7,9 +7,7 @@ module.exports = {
 		if (filename.indexOf("node_modules") === -1 && babel.canCompile(filename)) {
 			// return babel.transform(src, { filename: filename }).code;
 			babel.transformFile("filename.js", function(err, result) {
-				if(err) {
-					return new Error(err);
-				}
+				if(err) return new Error(err);
 				return result.code;
 			});
 		} else {
