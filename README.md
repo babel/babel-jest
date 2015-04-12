@@ -41,12 +41,12 @@ And then you can modify the test command in package.json like so:
 ```javascript
 {
 
-  // Normal pakcage.json stuff,
+  // Normal package.json stuff
 
   "scripts": {
     "test": "BABEL_JEST_STAGE=0 jest"
   },
 
-  // Normal pakcage.json stuff
+  // Normal package.json stuff
 }
 ```
