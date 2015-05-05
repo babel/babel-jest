@@ -1,8 +1,8 @@
 {
   "name": "babel-jest",
-  "version": "5.0.1",
+  "version": "5.1.0",
   "repository": "babel/babel-jest",
   "dependencies": {
-    "babel-core": "^5.0.0"
+    "babel-core": "^5.2.9"
   }
 }
