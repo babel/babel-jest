@@ -1,6 +1,6 @@
 {
   "name": "babel-jest",
-  "version": "5.2.0",
+  "version": "5.2.1",
   "repository": "babel/babel-jest",
   "dependencies": {
     "babel-core": "^5.2.9"
