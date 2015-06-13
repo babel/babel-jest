@@ -14,7 +14,7 @@ module.exports = {
         filename: filename,
         stage: stage,
         retainLines: true,
-        auxiliaryComment: "istanbul ignore next"
+        auxiliaryCommentBefore: "istanbul ignore next"
       }).code;
     }
 
