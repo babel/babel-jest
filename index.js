@@ -6,6 +6,14 @@ module.exports = {
     // variable, but use Babel's default stage (2) if
     // no environment variable is specified.
     var stage = process.env.BABEL_JEST_STAGE || 2;
+    // Allow the usage of runtime
+    var runtimeEnabled = process.env.BABEL_RUNTIME_ENABLED || false;
+    // Optionnal params to babel transform
+    var optional = [];
+
+    if (runtimeEnabled) {
+        optional.push('runtime');
+    }
 
     // Ignore all files within node_modules
     // babel files can be .js, .es, .jsx or .es6
@@ -14,7 +22,8 @@ module.exports = {
         filename: filename,
         stage: stage,
         retainLines: true,
-        auxiliaryCommentBefore: "istanbul ignore next"
+        auxiliaryCommentBefore: "istanbul ignore next",
+        optional: optional
       }).code;
     }
 
