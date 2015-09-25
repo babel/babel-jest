@@ -17,6 +17,7 @@ Make the following changes to `package.json`:
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "preprocessorIgnorePatterns": ["/node_modules/"],
     "testFileExtensions": ["es6", "js"],
     "moduleFileExtensions": ["js", "json", "es6"]
   }
