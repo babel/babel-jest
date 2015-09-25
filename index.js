@@ -7,9 +7,8 @@ module.exports = {
     // no environment variable is specified.
     var stage = process.env.BABEL_JEST_STAGE || 2;
 
-    // Ignore all files within node_modules
-    // babel files can be .js, .es, .jsx or .es6
-    if (filename.indexOf("node_modules") === -1 && babel.canCompile(filename)) {
+    // Babel files can be .js, .es, .jsx or .es6
+    if (babel.canCompile(filename)) {
       return babel.transform(src, {
         filename: filename,
         stage: stage,
