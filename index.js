@@ -7,9 +7,20 @@ module.exports = {
     // no environment variable is specified.
     var stage = process.env.BABEL_JEST_STAGE || 2;
 
-    // Ignore all files within node_modules
+    // Allow the the processor to be configured to process specific
+    // modules within the node_modules/ folder, i.e, symbolic links used to 
+    // shorthand src/ filepaths.
+    var processModules = JSON.parse(process.env.BABEL_JEST_PROCESS_MODULES || "null") || [];
+    for (var i = 0, ok = false; i < processModules.length; i++) {
+      if (filename.indexOf(path.join(process.cwd(), "node_modules", processModules[i])) === 0) {
+        ok = true;
+        break;
+      }
+    }
+
+    // Ignore all other files within node_modules
     // babel files can be .js, .es, .jsx or .es6
-    if (filename.indexOf("node_modules") === -1 && babel.canCompile(filename)) {
+    if ((ok || filename.indexOf("node_modules") === -1) && babel.canCompile(filename)) {
       return babel.transform(src, {
         filename: filename,
         stage: stage,
