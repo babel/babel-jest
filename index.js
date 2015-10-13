@@ -9,13 +9,17 @@ module.exports = {
     var stage = process.env.BABEL_JEST_STAGE || 2;
 
     // Allow the the processor to be configured to process specific
-    // modules within the node_modules/ folder, i.e, symbolic links used to 
+    // modules within the node_modules/ folder, i.e, symbolic links used to
     // shorthand src/ filepaths.
     var processModules = JSON.parse(process.env.BABEL_JEST_PROCESS_MODULES || "null") || [];
     for (var i = 0, ok = false; i < processModules.length; i++) {
       if (filename.indexOf(path.join(process.cwd(), "node_modules", processModules[i])) === 0) {
-        ok = true;
-        break;
+        // Don't process any of the modules own node_modules, just b/c their
+        // filepath happens to match the previous test...
+        if (filename.match(/node_modules/g).length === 1)  {
+          ok = true;
+          break;
+        }
       }
     }
 
