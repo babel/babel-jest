@@ -31,22 +31,40 @@ And run:
 
 ## Using experimental stages
 
-By default, babel-jest will use Babel's default stage (stage 2).
-If you'd like to use one of the other stages, set the environment variable:
+By default, babel-jest will read config from `package.json` or `.babelrc` files.  
+If you want to provide custom config you can use jest `globals` `babelConfig` jest configuration field like this:
 
-`BABEL_JEST_STAGE`
+* to provide custom config path:
 
-And then you can modify the test command in package.json like so:
-
-```javascript
+```json
 {
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "globals": {
+      "babelConfig": {
+        "configPath": "path here"
+      }
+    },
+    "testFileExtensions": ["es6", "js"],
+    "moduleFileExtensions": ["js", "json", "es6"]
+  }
+}
+```
 
-  // Normal package.json stuff
+* to provide custom config object:
 
-  "scripts": {
-    "test": "BABEL_JEST_STAGE=0 jest"
-  },
-
-  // Normal package.json stuff
+```json
+{
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "globals": {
+      "babelConfig": {
+        "presets": ["..."],
+        "plugins": ["..."]
+      }
+    },
+    "testFileExtensions": ["es6", "js"],
+    "moduleFileExtensions": ["js", "json", "es6"]
+  }
 }
 ```
