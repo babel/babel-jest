@@ -23,6 +23,14 @@ Make the following changes to `package.json`:
 }
 ```
 
+Create or add the following to your `.babelrc`:
+```json
+{
+  "presets": ["react"]
+}
+
+```
+
 And run:
 
     $ npm install
@@ -30,23 +38,6 @@ And run:
 **And you're good to go!**
 
 ## Using experimental stages
+Babel 6.x introduces `presets`.  
 
-By default, babel-jest will use Babel's default stage (stage 2).
-If you'd like to use one of the other stages, set the environment variable:
-
-`BABEL_JEST_STAGE`
-
-And then you can modify the test command in package.json like so:
-
-```javascript
-{
-
-  // Normal package.json stuff
-
-  "scripts": {
-    "test": "BABEL_JEST_STAGE=0 jest"
-  },
-
-  // Normal package.json stuff
-}
-```
+Please refer to the [plugins docs](http://babeljs.io/docs/plugins/) on how to enable experimental stages.
