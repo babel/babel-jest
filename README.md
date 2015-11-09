@@ -23,6 +23,15 @@ Make the following changes to `package.json`:
 }
 ```
 
+To use the Babel polyfill, add the following to the `"jest"` configuration in `package.json`:
+
+```json
+"jest": {
+  "setupEnvScriptFile": "<rootDir>/node_modules/babel-jest/polyfill.js",
+  "unmockedModulePathPatterns": ["node_modules/babel-core"]
+}
+```
+
 And run:
 
     $ npm install
