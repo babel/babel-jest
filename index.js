@@ -3,11 +3,6 @@ var path = require("path");
 
 module.exports = {
   process: function (src, filename) {
-    // Allow the stage to be configured by an environment
-    // variable, but use Babel's default stage (2) if
-    // no environment variable is specified.
-    var stage = process.env.BABEL_JEST_STAGE || 2;
-
     // Allow the the processor to be configured to process specific
     // modules within the node_modules/ folder, i.e, symbolic links used to
     // shorthand src/ filepaths.
@@ -28,9 +23,7 @@ module.exports = {
     if ((ok || filename.indexOf("node_modules") === -1) && babel.canCompile(filename)) {
       return babel.transform(src, {
         filename: filename,
-        stage: stage,
-        retainLines: true,
-        auxiliaryCommentBefore: "istanbul ignore next"
+        retainLines: true
       }).code;
     }
 
