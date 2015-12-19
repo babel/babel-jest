@@ -20,7 +20,7 @@ module.exports = {
 
     // Ignore all other files within node_modules
     // babel files can be .js, .es, .jsx or .es6
-    if ((ok || filename.indexOf("node_modules") === -1) && babel.canCompile(filename)) {
+    if ((ok || filename.indexOf("node_modules") === -1) && babel.util.canCompile(filename)) {
       return babel.transform(src, {
         filename: filename,
         retainLines: true
