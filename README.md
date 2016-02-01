@@ -9,8 +9,8 @@ Make the following changes to `package.json`:
 ```json
 {
   "devDependencies": {
-    "babel-jest": "*",
-    "jest-cli": "*"
+    "babel-jest": "~6.0.1",
+    "jest-cli": "~5.0.3"
   },
   "scripts": {
     "test": "jest"
