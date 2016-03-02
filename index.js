@@ -7,7 +7,9 @@ module.exports = {
     if (filename.indexOf("node_modules") === -1 && babel.util.canCompile(filename)) {
       return babel.transform(src, {
         filename: filename,
-        retainLines: true
+        retainLines: true,
+        auxiliaryCommentBefore: 'istanbul ignore next',
+        plugins: ['transform-runtime']
       }).code;
     }
 
