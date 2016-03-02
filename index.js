@@ -5,10 +5,13 @@ module.exports = {
     // Ignore all files within node_modules
     // babel files can be .js, .es, .jsx or .es6
     if (filename.indexOf("node_modules") === -1 && babel.util.canCompile(filename)) {
-      return babel.transform(src, {
+      var code = babel.transform(src, {
         filename: filename,
-        retainLines: true
+        retainLines: true,
+        auxiliaryCommentBefore: 'istanbul ignore next'
       }).code;
+
+      return code.replace('function _interopRequireDefault(obj)', '/*istanbul ignore next */\nfunction _interopRequireDefault(obj)');
     }
 
     return src;
