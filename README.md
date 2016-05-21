@@ -6,5 +6,5 @@ found in [packages/babel-jest](https://github.com/facebook/jest/tree/master/pack
 `babel-jest` is now automatically loaded by Jest and fully integrated.
 
 ```
-npm install --save jest-cli babel-jest
+npm install --save jest babel-jest
 ```
